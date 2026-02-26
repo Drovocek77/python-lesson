@@ -46,7 +46,7 @@ class TestTrim:
 
     def test_trim_positive_spaces_and_text(self, string_utils):
         """Позитивный тест 3: пробелы в начале и текст с пробелом"""
-        assert string_utils.trim("  hello world") == "  hello world"
+        assert string_utils.trim("  hello world") == "hello world"
 
     def test_trim_negative_no_spaces(self, string_utils):
         """Негативный тест 1: строка без пробелов"""
@@ -65,27 +65,27 @@ class TestContains:
 
     def test_contains_positive_single_char(self, string_utils):
         """Позитивный тест 1: поиск одного символа"""
-        assert string_utils.contains("SkyPro", "S") == "True"
+        assert string_utils.contains("SkyPro", "S") == True
 
     def test_contains_positive_substring(self, string_utils):
         """Позитивный тест 2: поиск полстроки"""
-        assert string_utils.contains("SkyPro", "Sky") == "True"
+        assert string_utils.contains("SkyPro", "Sky") == True
 
     def test_contains_positive_special_char(self, string_utils):
         """Позитивный тест 3: поиск спецсимвола"""
-        assert string_utils.contains("Hello@World", "@") == "True"
+        assert string_utils.contains("Hello@World", "@") == True
 
     def test_contains_negative_no_symbol(self, string_utils):
         """Негативный тест 1: символ отсутствует"""
-        assert string_utils.contains("SkyPro", "U") == "False"
+        assert string_utils.contains("SkyPro", "U") == False
 
     def test_contains_negative_empty_string(self, string_utils):
         """Негативный тест 2: пустая строка"""
-        assert string_utils.contains("", "S") == "False"
+        assert string_utils.contains("", "S") == False
 
     def test_contains_negative_case_sensitive(self, string_utils):
         """Негативный тест 3: несовпадение регистра"""
-        assert string_utils.contains("SkyPro", "s") == "False"
+        assert string_utils.contains("SkyPro", "s") == False
 
 
 class TestDeleteSymbol:

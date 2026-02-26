@@ -65,27 +65,27 @@ class TestContains:
 
     def test_contains_positive_single_char(self, string_utils):
         """Позитивный тест 1: поиск одного символа"""
-        assert string_utils.contains("SkyPro", "S") == True
+        assert string_utils.contains("SkyPro", "S")
 
     def test_contains_positive_substring(self, string_utils):
         """Позитивный тест 2: поиск полстроки"""
-        assert string_utils.contains("SkyPro", "Sky") == True
+        assert string_utils.contains("SkyPro", "Sky")
 
     def test_contains_positive_special_char(self, string_utils):
         """Позитивный тест 3: поиск спецсимвола"""
-        assert string_utils.contains("Hello@World", "@") == True
+        assert string_utils.contains("Hello@World", "@")
 
     def test_contains_negative_no_symbol(self, string_utils):
         """Негативный тест 1: символ отсутствует"""
-        assert string_utils.contains("SkyPro", "U") == False
+        assert not string_utils.contains("SkyPro", "U")
 
     def test_contains_negative_empty_string(self, string_utils):
         """Негативный тест 2: пустая строка"""
-        assert string_utils.contains("", "S") == False
+        assert not string_utils.contains("", "S")
 
     def test_contains_negative_case_sensitive(self, string_utils):
         """Негативный тест 3: несовпадение регистра"""
-        assert string_utils.contains("SkyPro", "s") == False
+        assert not string_utils.contains("SkyPro", "s")
 
 
 class TestDeleteSymbol:
